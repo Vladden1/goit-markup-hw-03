@@ -274,7 +274,7 @@ button {
 
 /* Footer */
 .footer .container {
-  padding-top: 60px;
+  padding: 60px 0;
 }
 .footer .logo {
   display: inline-block;
