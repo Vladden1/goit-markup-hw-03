@@ -20,12 +20,8 @@ h3,
 h4,
 h5,
 h6,
-ul,
-li,
-a,
 p {
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin: 0px;
 }
 img {
   display: block;
@@ -33,6 +29,13 @@ img {
 }
 ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: currentColor;
+  font-style: normal;
 }
 
 body {
@@ -49,14 +52,11 @@ button {
 .hero,
 .footer {
   background-color: #2f303a;
-  width: 1600px;
 }
 
 .section {
   padding-top: 94px;
   padding-bottom: 94px;
-  margin-top: 0px;
-  margin-bottom: 0px;
 }
 /* index.html - Студія */
 /* header */
@@ -73,8 +73,7 @@ button {
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  outline: 1px solid tomato;
 }
 
 .logo {
@@ -83,7 +82,6 @@ button {
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
-  text-decoration: none;
   margin-right: 93px;
 }
 .accent {
@@ -104,7 +102,7 @@ button {
   display: block;
   color: var(--tittle-text-color);
   letter-spacing: 0.02em;
-  text-decoration: none;
+
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -128,7 +126,6 @@ button {
 }
 .call-us .link {
   display: block;
-  text-decoration: none;
   color: #757575;
   font-weight: 500;
   font-size: 14px;
@@ -147,10 +144,11 @@ button {
 /* main */
 /* hero */
 .hero {
-  height: 600px;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  padding-left: 0px;
+  padding-right: 0px;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
 }
 .hero .hero-title {
   color: #ffffff;
@@ -163,11 +161,7 @@ button {
   text-transform: uppercase;
   margin-right: auto;
   margin-left: auto;
-
-  padding-top: 106px;
-
-  padding-left: 452px;
-  padding-right: 452px;
+  width: 696px;
 }
 
 /* кнопка */
@@ -187,6 +181,7 @@ button {
   padding-left: 32px;
   padding-right: 32px;
   margin-top: 30px;
+  border: none;
 }
 
 /* Преимущества */
@@ -205,17 +200,14 @@ button {
   overflow: hidden;
 }
 /*  */
-.section.feature {
-  padding-top: 0;
+.feature-item {
+  width: 270px;
 }
-
 .feature-list {
   display: flex;
-  align-self: center;
+  gap: 30px;
 }
-.feature-list .item + .item {
-  margin-left: 30px;
-}
+
 .feature-list .title {
   color: var(--tittle-text-color);
   font-weight: 700;
@@ -249,28 +241,14 @@ button {
 
 /* Команда */
 .section.team {
-  background-color: #f5f4fa;
-  text-align: center;
 }
-/* 
-width: 1200px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0px;
-  margin-bottom: 0px;
-} */
+
 .container.team {
   background-color: #f5f4fa;
-
-  text-align: center;
 }
 .wrap-card {
-  margin-top: 0px;
   background-color: #ffffff;
-  width: 270px;
-  height: 108px;
+  padding: 30px 0;
   border-radius: 0px 0px 4px 4px;
   text-align: center;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -279,61 +257,42 @@ width: 1200px;
 
 .team-list {
   display: flex;
-  padding: 0;
 }
-.team-list .item + .item {
+.team-list .team-item + .team-item {
   margin-left: 30px;
 }
-.team-list .title {
+.team-list .team-title {
   color: var(--tittle-text-color);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
-  padding-top: 30px;
-  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
-.team-list p {
+.team-list .team-text {
   font-size: 16px;
   line-height: 1.19;
-  font-weight: 400;
 }
 
 /* Footer */
-.footer {
-  height: 252px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.container.footer {
-  background-color: #2f303a;
-  width: 1600px;
+.footer .container {
+  padding-top: 60px;
 }
 .footer .logo {
   display: inline-block;
   color: #ffffff;
-  margin-left: 215px;
-  margin-right: 1240px;
-  margin-top: 60px;
   margin-bottom: 20px;
 }
 
-.footer .item {
+.footer .footer-item + .footer-item {
   margin-top: 9px;
 }
 .footer-list {
-  padding-left: 0px;
-}
-.footer-list .link {
   font-size: 14px;
   line-height: 1.71;
   color: rgba(255, 255, 255, 0.6);
-  text-decoration: none;
-  font-style: normal;
-  margin-left: 215px;
-
-  width: 231px;
 }
-.footer-list .adress {
+
+.footer-item .adress {
   color: var(--primary-white-color);
 }
 
@@ -346,8 +305,10 @@ width: 1200px;
 /*  */
 /*  */
 /* portfolio.html - Портфоліо */
-.portfolio {
+header.section {
   border: 1px solid #ececec;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 /* main */
 /*кнопки фильтра */
@@ -396,7 +357,6 @@ width: 1200px;
 
 .examples a {
   display: block;
-  text-decoration: none;
   color: var(--tittle-text-color);
 }
 .examples-list .tittle-card {
